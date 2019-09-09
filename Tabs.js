@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { createAppContainer } from 'react-navigation';
-import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import AddEntry from './components/AddEntry'
 import History from './components/History'
+import Live from './components/Live'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
@@ -28,9 +29,10 @@ class SettingsScreen extends React.Component {
 }
 
 
-const TabNavigator = createMaterialTopTabNavigator({
+const TabNavigator = createBottomTabNavigator({
   History: History,
-  'Add Entry': AddEntry
+  'Add Entry': AddEntry,
+  Live: Live
 },
 
 {
@@ -50,6 +52,10 @@ const TabNavigator = createMaterialTopTabNavigator({
     tabBarOptions: {
       activeTintColor: 'white',
       inactiveTintColor: 'lightgray',
+      pressColor: 'green'
+    },
+    style: {
+      backgroundColor: 'white'
     }
   }
 );
